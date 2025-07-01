@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "backend/server.js", "use": "@vercel/node" },
+    { "src": "frontend/src/main.tsx", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/server.js"
+    },
+    {
+      "src": "/uploads/(.*)",
+      "dest": "/backend/server.js"
+    },
+    {
+      "src": "/(?!api|uploads)(.*)",
+      "dest": "/frontend/index.html"
+    }
+  ],
+  "outputDirectory": "frontend/dist",
+  "static": {
+    "public": "/frontend/public"
+  },
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
