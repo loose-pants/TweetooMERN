@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
   "start": "node server.js",
-  "build": "cd client && npm install && npm run build",
+  "build": "cd frontend && npm install && npm run build",
   "server": "node server.js",
-  "client": "cd client && npm start",
+  "client": "cd frontend && npm start",
   "dev": "concurrently \"npm run backend\" \"npm run frontend\""
 },
   "dependencies": {
