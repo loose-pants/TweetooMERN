@@ -5,10 +5,9 @@
   "main": "server.js",
   "scripts": {
   "start": "node server.js",
-  "build": "cd frontend && npm install && npm run build",
-  "server": "node server.js",
-  "client": "cd frontend && npm start",
-  "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  "dev": "nodemon server.js",
+  // Remove the "build" script or replace it with just backend setup
+  "build": "npm install"  // Optional: Only if you need a build step for backend
 },
   "dependencies": {
     "bcryptjs": "^2.4.3",
