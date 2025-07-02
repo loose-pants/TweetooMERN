@@ -4,11 +4,12 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
-    "seed": "node seeder.js -i",
-    "seed:destroy": "node seeder.js -d"
-  },
+  "start": "node server.js",
+  "build": "cd client && npm install && npm run build",
+  "server": "node server.js",
+  "client": "cd client && npm start",
+  "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+},
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
